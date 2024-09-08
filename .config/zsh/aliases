@@ -1,0 +1,4 @@
+alias ls='ls --color=auto'
+
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index} > /dev/null"; unset index
