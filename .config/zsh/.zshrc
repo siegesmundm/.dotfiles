@@ -28,3 +28,6 @@ source $ZDOTDIR/prompt/prompt.zsh
 # Keybind
 bindkey "^[[3~" delete-char
 bindkey "^[[1~" beginning-of-line
+bindkey "^[[H"  beginning-of-line
+bindkey "^R" history-incremental-search-backward
+bindkey "^Y" hisotry-incremental-search-forward

@@ -1,0 +1,62 @@
+@import "./rose-pine.css";
+
+* {
+    font-family: "Hack";
+    font-size: 95%;
+}
+
+window#waybar {
+    background: @base;
+    border-bottom: 2px solid @rose;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 10px;
+}
+
+.modules-right > widget:last-child > #tray {
+    margin-right: 10px;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @text;
+}
+
+#workspaces button.active {
+	background: @rose;
+	color: @base;
+}
+
+#workspaces button.urgent {
+    background-color: @love;
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#tray {
+    color: @text; 
+}
+
+#tray {}
+
+#tray > .needs-attention {
+  background-color: @love;
+  color: @base;
+}

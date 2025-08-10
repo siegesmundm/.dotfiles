@@ -1,0 +1,63 @@
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio#microphone", "pulseaudio", "custom/separator#line", "tray"],
+
+    // MODULES //
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+	    "6": "六",
+	    "7": "七",
+	    "8": "八",
+	    "9": "九",
+	    "10": "十",
+        }
+    },
+
+    "custom/separator#line": {
+	"format": "|",
+	"interval": "once",
+	"tooltip": false
+    },
+
+    "clock": {
+    	"interval": 1,
+	"format": " {:%H:%M:%S}",
+	"format-alt": " {:%H:%M:%S %p  %Y, %d %B, %A}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " {format_source}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+    "pulseaudio#microphone": {
+	"format": "{format_source}",
+	"format-source": " ",
+	"format-source-muted": "",
+	"on-click-left": "pavucontrol -t 4",
+	"tooltip-format": "{source_desc} | {source_volume}%",
+    }
+}
